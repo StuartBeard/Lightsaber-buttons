@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>buttons</title>
+  <script type="text/javascript">
+    function goto(s){
+      window.open(s);
+    }
+  </script>
+</head>
+<style type="text/css">
+  body {
+  background: #373940; /*grey*/
+  padding: 0px;
+  margin: 5px;
+}
+
+.frame {
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  margin-top: 0px;
+  position: relative;
+  cursor: pointer;
+}
+.mainShapes {
+  background: #ABF8FF; /*light blue*/
+  width: 60px;
+  height: 15px;
+  transition: background .5s, width 0.1s ease-in-out, border-radius .2s ease-in-out, color .5s;
+  transition-delay: .2s
+}
+.frame:focus{
+  outline: 0;
+}
+.beam {
+  position: absolute;
+  background: #066B67; /*cyan*/
+  font-size: 15px;
+  vertical-align: middle;
+  text-align: center;
+  color: #066B67; /*cyan*/
+}
+.frame:hover .beam {
+  width:300px;
+  border-radius:0 35% 35% 0;
+  color: #0AAB67; /*brighter green*/
+}
+.frame:active .beam{
+  transition: all .2s;
+  background: #653940; /*darkish red*/
+  color: #993940; /*brighter red*/
+}
+.base {
+  position: relative;
+}
+
+.cover {
+  background: #373940; /*grey same as background*/
+  width: 40px;
+  height: 2px;
+  border-radius:0 0 50% 50%;
+}
+.topcover{
+  position: absolute;
+  left: 10px;
+  z-index: 100;
+}
+.bottomcover{
+  position: relative;
+  top: -2px;
+  left: 10px;
+  z-index: 100;
+  transform: rotate(180deg);
+}
+.circle
+{
+  position: relative;
+  left: 40px;
+  top: -12px;
+  background: #653940; /*darker red*/
+  width: 5px;
+  height: 5px;
+  border-radius:100%
+}
+.frame:hover .circle{
+  background: #993940; /*brighter red*/
+}
+.lineLeft{
+  position: relative;
+  top: -21px;
+  left: 10px;
+  background: #373940; /*grey same as background*/
+  height: 15px;
+  width: 1px;
+}
+.lineRight{
+  position: relative;
+  top: -36px;
+  left: 49px;
+  background: #373940; /*grey same as background*/
+  height: 15px;
+  width: 1px;
+}
+#button{
+  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+  font-weight: 800;
+  display: table;
+  table-layout: fixed;
+  max-height: 30px;
+}
+</style>
+<body>
+<a id="button" class="frame" href="#">
+    <div class="mainShapes beam">Title</div>
+    <div class="cover topcover"></div>
+    <div class="mainShapes base"></div>
+    <div class="cover bottomcover"></div>
+    <div class="circle"></div>
+    <div class="lineLeft"></div>
+    <div class="lineRight"></div>
+</a>
+<a id="button" class="frame" href="#">
+    <div class="mainShapes beam">Title</div>
+    <div class="cover topcover"></div>
+    <div class="mainShapes base"></div>
+    <div class="cover bottomcover"></div>
+    <div class="circle"></div>
+    <div class="lineLeft"></div>
+    <div class="lineRight"></div>
+</a>
+</body>
+</html>
